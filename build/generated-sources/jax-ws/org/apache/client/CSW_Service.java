@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CSW", targetNamespace = "http://VNSCweb.apache.org/", wsdlLocation = "http://localhost:8080/MavenWebProject/CSW?wsdl")
+@WebServiceClient(name = "CSW", targetNamespace = "http://www.opengis.net/cat/csw/2.0.2", wsdlLocation = "http://localhost:8080/MavenWebProject/CSW?wsdl")
 public class CSW_Service
     extends Service
 {
 
     private final static URL CSW_WSDL_LOCATION;
     private final static WebServiceException CSW_EXCEPTION;
-    private final static QName CSW_QNAME = new QName("http://VNSCweb.apache.org/", "CSW");
+    private final static QName CSW_QNAME = new QName("http://www.opengis.net/cat/csw/2.0.2", "CSW");
 
     static {
         URL url = null;
@@ -69,7 +69,7 @@ public class CSW_Service
      */
     @WebEndpoint(name = "CSWPort")
     public CSW getCSWPort() {
-        return super.getPort(new QName("http://VNSCweb.apache.org/", "CSWPort"), CSW.class);
+        return super.getPort(new QName("http://www.opengis.net/cat/csw/2.0.2", "CSWPort"), CSW.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class CSW_Service
      */
     @WebEndpoint(name = "CSWPort")
     public CSW getCSWPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://VNSCweb.apache.org/", "CSWPort"), CSW.class, features);
+        return super.getPort(new QName("http://www.opengis.net/cat/csw/2.0.2", "CSWPort"), CSW.class, features);
     }
 
     private static URL __getWsdlLocation() {

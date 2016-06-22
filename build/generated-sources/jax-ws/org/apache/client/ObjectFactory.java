@@ -24,10 +24,13 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _DescribeRecord_QNAME = new QName("http://VNSCweb.apache.org/", "DescribeRecord");
-    private final static QName _GetCapabilitiesResponse_QNAME = new QName("http://VNSCweb.apache.org/", "GetCapabilitiesResponse");
-    private final static QName _GetCapabilities_QNAME = new QName("http://VNSCweb.apache.org/", "GetCapabilities");
-    private final static QName _DescribeRecordResponse_QNAME = new QName("http://VNSCweb.apache.org/", "DescribeRecordResponse");
+    private final static QName _GetDomainResponse_QNAME = new QName("http://www.opengis.net/cat/csw/2.0.2", "GetDomainResponse");
+    private final static QName _GetCapabilitiesResponse_QNAME = new QName("http://www.opengis.net/cat/csw/2.0.2", "GetCapabilitiesResponse");
+    private final static QName _DescribeRecord_QNAME = new QName("http://www.opengis.net/cat/csw/2.0.2", "DescribeRecord");
+    private final static QName _Exception_QNAME = new QName("http://www.opengis.net/cat/csw/2.0.2", "Exception");
+    private final static QName _DescribeRecordResponse_QNAME = new QName("http://www.opengis.net/cat/csw/2.0.2", "DescribeRecordResponse");
+    private final static QName _GetDomain_QNAME = new QName("http://www.opengis.net/cat/csw/2.0.2", "GetDomain");
+    private final static QName _GetCapabilities_QNAME = new QName("http://www.opengis.net/cat/csw/2.0.2", "GetCapabilities");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.apache.client
@@ -53,11 +56,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetDomain }
+     * 
+     */
+    public GetDomain createGetDomain() {
+        return new GetDomain();
+    }
+
+    /**
+     * Create an instance of {@link GetDomainResponse }
+     * 
+     */
+    public GetDomainResponse createGetDomainResponse() {
+        return new GetDomainResponse();
+    }
+
+    /**
      * Create an instance of {@link GetCapabilitiesResponse }
      * 
      */
     public GetCapabilitiesResponse createGetCapabilitiesResponse() {
         return new GetCapabilitiesResponse();
+    }
+
+    /**
+     * Create an instance of {@link Exception }
+     * 
+     */
+    public Exception createException() {
+        return new Exception();
     }
 
     /**
@@ -69,39 +96,66 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DescribeRecord }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDomainResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://VNSCweb.apache.org/", name = "DescribeRecord")
-    public JAXBElement<DescribeRecord> createDescribeRecord(DescribeRecord value) {
-        return new JAXBElement<DescribeRecord>(_DescribeRecord_QNAME, DescribeRecord.class, null, value);
+    @XmlElementDecl(namespace = "http://www.opengis.net/cat/csw/2.0.2", name = "GetDomainResponse")
+    public JAXBElement<GetDomainResponse> createGetDomainResponse(GetDomainResponse value) {
+        return new JAXBElement<GetDomainResponse>(_GetDomainResponse_QNAME, GetDomainResponse.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCapabilitiesResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://VNSCweb.apache.org/", name = "GetCapabilitiesResponse")
+    @XmlElementDecl(namespace = "http://www.opengis.net/cat/csw/2.0.2", name = "GetCapabilitiesResponse")
     public JAXBElement<GetCapabilitiesResponse> createGetCapabilitiesResponse(GetCapabilitiesResponse value) {
         return new JAXBElement<GetCapabilitiesResponse>(_GetCapabilitiesResponse_QNAME, GetCapabilitiesResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCapabilities }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DescribeRecord }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://VNSCweb.apache.org/", name = "GetCapabilities")
-    public JAXBElement<GetCapabilities> createGetCapabilities(GetCapabilities value) {
-        return new JAXBElement<GetCapabilities>(_GetCapabilities_QNAME, GetCapabilities.class, null, value);
+    @XmlElementDecl(namespace = "http://www.opengis.net/cat/csw/2.0.2", name = "DescribeRecord")
+    public JAXBElement<DescribeRecord> createDescribeRecord(DescribeRecord value) {
+        return new JAXBElement<DescribeRecord>(_DescribeRecord_QNAME, DescribeRecord.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Exception }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.opengis.net/cat/csw/2.0.2", name = "Exception")
+    public JAXBElement<Exception> createException(Exception value) {
+        return new JAXBElement<Exception>(_Exception_QNAME, Exception.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DescribeRecordResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://VNSCweb.apache.org/", name = "DescribeRecordResponse")
+    @XmlElementDecl(namespace = "http://www.opengis.net/cat/csw/2.0.2", name = "DescribeRecordResponse")
     public JAXBElement<DescribeRecordResponse> createDescribeRecordResponse(DescribeRecordResponse value) {
         return new JAXBElement<DescribeRecordResponse>(_DescribeRecordResponse_QNAME, DescribeRecordResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDomain }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.opengis.net/cat/csw/2.0.2", name = "GetDomain")
+    public JAXBElement<GetDomain> createGetDomain(GetDomain value) {
+        return new JAXBElement<GetDomain>(_GetDomain_QNAME, GetDomain.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCapabilities }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.opengis.net/cat/csw/2.0.2", name = "GetCapabilities")
+    public JAXBElement<GetCapabilities> createGetCapabilities(GetCapabilities value) {
+        return new JAXBElement<GetCapabilities>(_GetCapabilities_QNAME, GetCapabilities.class, null, value);
     }
 
 }

@@ -1,12 +1,14 @@
 
 package org.apache.client;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
+import javax.xml.ws.FaultAction;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -17,7 +19,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "CSW", targetNamespace = "http://VNSCweb.apache.org/")
+@WebService(name = "CSW", targetNamespace = "http://www.opengis.net/cat/csw/2.0.2")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -27,31 +29,48 @@ public interface CSW {
     /**
      * 
      * @param name
-     * @return
-     *     returns java.lang.String
+     * @throws Exception_Exception
      */
     @WebMethod(operationName = "DescribeRecord")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DescribeRecord", targetNamespace = "http://VNSCweb.apache.org/", className = "org.apache.client.DescribeRecord")
-    @ResponseWrapper(localName = "DescribeRecordResponse", targetNamespace = "http://VNSCweb.apache.org/", className = "org.apache.client.DescribeRecordResponse")
-    @Action(input = "http://VNSCweb.apache.org/CSW/DescribeRecordRequest", output = "http://VNSCweb.apache.org/CSW/DescribeRecordResponse")
-    public String describeRecord(
+    @RequestWrapper(localName = "DescribeRecord", targetNamespace = "http://www.opengis.net/cat/csw/2.0.2", className = "org.apache.client.DescribeRecord")
+    @ResponseWrapper(localName = "DescribeRecordResponse", targetNamespace = "http://www.opengis.net/cat/csw/2.0.2", className = "org.apache.client.DescribeRecordResponse")
+    @Action(input = "http://www.opengis.net/cat/csw/2.0.2/CSW/DescribeRecordRequest", output = "http://www.opengis.net/cat/csw/2.0.2/CSW/DescribeRecordResponse", fault = {
+        @FaultAction(className = Exception_Exception.class, value = "http://www.opengis.net/cat/csw/2.0.2/CSW/DescribeRecord/Fault/Exception")
+    })
+    public void describeRecord(
         @WebParam(name = "name", targetNamespace = "")
-        String name);
+        String name)
+        throws Exception_Exception
+    ;
 
     /**
      * 
-     * @param name
+     * @param arg1
+     * @param arg0
      * @return
-     *     returns java.lang.String
+     *     returns boolean
+     */
+    @WebMethod(operationName = "GetDomain")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetDomain", targetNamespace = "http://www.opengis.net/cat/csw/2.0.2", className = "org.apache.client.GetDomain")
+    @ResponseWrapper(localName = "GetDomainResponse", targetNamespace = "http://www.opengis.net/cat/csw/2.0.2", className = "org.apache.client.GetDomainResponse")
+    @Action(input = "http://www.opengis.net/cat/csw/2.0.2/CSW/GetDomainRequest", output = "http://www.opengis.net/cat/csw/2.0.2/CSW/GetDomainResponse")
+    public boolean getDomain(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<java.lang.String>
      */
     @WebMethod(operationName = "GetCapabilities")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetCapabilities", targetNamespace = "http://VNSCweb.apache.org/", className = "org.apache.client.GetCapabilities")
-    @ResponseWrapper(localName = "GetCapabilitiesResponse", targetNamespace = "http://VNSCweb.apache.org/", className = "org.apache.client.GetCapabilitiesResponse")
-    @Action(input = "http://VNSCweb.apache.org/CSW/GetCapabilitiesRequest", output = "http://VNSCweb.apache.org/CSW/GetCapabilitiesResponse")
-    public String getCapabilities(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+    @RequestWrapper(localName = "GetCapabilities", targetNamespace = "http://www.opengis.net/cat/csw/2.0.2", className = "org.apache.client.GetCapabilities")
+    @ResponseWrapper(localName = "GetCapabilitiesResponse", targetNamespace = "http://www.opengis.net/cat/csw/2.0.2", className = "org.apache.client.GetCapabilitiesResponse")
+    @Action(input = "http://www.opengis.net/cat/csw/2.0.2/CSW/GetCapabilitiesRequest", output = "http://www.opengis.net/cat/csw/2.0.2/CSW/GetCapabilitiesResponse")
+    public List<String> getCapabilities();
 
 }

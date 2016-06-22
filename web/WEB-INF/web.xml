@@ -13,16 +13,24 @@
         <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>NewServlet</servlet-name>
-        <servlet-class>NewServlet</servlet-class>
+        <servlet-name>Cotroller</servlet-name>
+        <servlet-class>Cotroller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetCapabilities</servlet-name>
+        <servlet-class>GetCapabilities</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>NewServlet</servlet-name>
-        <url-pattern>/NewServlet</url-pattern>
+        <servlet-name>Cotroller</servlet-name>
+        <url-pattern>/Cotroller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetCapabilities</servlet-name>
+        <url-pattern>/GetCapabilities/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
